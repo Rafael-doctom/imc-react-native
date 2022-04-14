@@ -1,16 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
 export default function Header() {
+
     return (
         <View style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.logo}>LOGO</Text>
-                <TouchableOpacity style={styles.divReset}>
-                    <Text style={styles.textReset}>Resetar</Text>
-                </TouchableOpacity>
-
                 <StatusBar style="auto" />
             </View>
         </View>

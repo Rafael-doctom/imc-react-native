@@ -4,6 +4,7 @@ import {
     StyleSheet, Text, View, SafeAreaView, TextInput, TouchableOpacity, ScrollView
 } from 'react-native';
 
+
 export default function Main() {
 
     const [number1, onChangeNumber1] = useState();
@@ -16,8 +17,13 @@ export default function Main() {
     const Somar = () => {
         setResultado(number1 / (number2 * number2))
         setModal(true)
-
     };
+
+    const resetData = () => {
+        onChangeNumber1('')
+        onChangeNumber2('')
+        alert('erro')
+    }
 
     return (
 
@@ -26,6 +32,9 @@ export default function Main() {
                 <Text style={styles.title}>
                     Calculadora IMC
                 </Text>
+                <TouchableOpacity style={styles.divReset}>
+                    <Text style={styles.textReset} onPress={resetData}>Resetar</Text>
+                </TouchableOpacity>
 
                 <View style={styles.DivSum}>
                     <SafeAreaView style={styles.viewInput}>
@@ -53,8 +62,8 @@ export default function Main() {
                 </View>
                 <TouchableOpacity style={styles.divSomar}>
                     <Text onPress={Somar} style={styles.buttonSomar}>Calcular</Text>
-                </TouchableOpacity>
 
+                </TouchableOpacity>
                 {
                     modal ? (
                         <>
@@ -63,31 +72,31 @@ export default function Main() {
                                     {
                                         resultado === 0 ? (
                                             <>
-                                                IMC: {resultado}
+                                                IMC: {resultado.toFixed(2)}
                                             </>
                                         ) : resultado <= 18.5 ? (
                                             <>
-                                                Magresa: {resultado}
+                                                Magresa: {resultado.toFixed(2)}
                                             </>
                                         ) : resultado >= 18.6 && resultado <= 24.9 ? (
                                             <>
-                                                Normal: {resultado}
+                                                Normal: {resultado.toFixed(2)}
                                             </>
                                         ) : resultado >= 25 && resultado <= 29.9 ? (
                                             <>
-                                                Sobrepeso: {resultado}
+                                                Sobrepeso: {resultado.toFixed(2)}
                                             </>
                                         ) : resultado >= 30 && resultado <= 34.9 ? (
                                             <>
-                                                Obesidade Grau I: {resultado}
+                                                Obesidade Grau I: {resultado.toFixed(2)}
                                             </>
                                         ) : resultado >= 35 && resultado <= 40 ? (
                                             <>
-                                                Obesidade Grau II: {resultado}
+                                                Obesidade Grau II: {resultado.toFixed(2)}
                                             </>
                                         ) : resultado >= 0 ? (
                                             <>
-                                                Obesidade Grau III: {resultado}
+                                                Obesidade Grau III: {resultado.toFixed(2)}
                                             </>
                                         ) : null
                                     }
@@ -156,6 +165,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 25,
     },
-
-
+    resetNumber: {
+        color: 'white'
+    },
+    divReset: {
+        backgroundColor: '#87f2a2',
+        width: 90,
+        height: 30,
+        padding: 5,
+        borderRadius: 10,
+        marginTop: -120,
+        right: 10,
+        position: 'absolute'
+    },
+    textReset: {
+        color: '#121214',
+        textAlign: 'center',
+    }
 });
