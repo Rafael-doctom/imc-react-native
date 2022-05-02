@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
-                <Text style={styles.logo}>LOGO</Text>
+                <Text style={styles.logo}>IMC</Text>
                 <StatusBar style="auto" />
             </View>
         </View>

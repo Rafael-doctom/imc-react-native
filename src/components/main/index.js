@@ -115,7 +115,7 @@ export default function Main() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 2,
+        flex: 1,
         backgroundColor: '#1B1726',
         color: 'white',
     },
@@ -127,6 +127,8 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 25,
+        width: '100%',
+
     },
     viewInput: {
         marginTop: 10,
@@ -140,13 +142,14 @@ const styles = StyleSheet.create({
         marginTop: 15,
         fontSize: 15,
         color: 'white',
+        width: '95%',
     },
     divSomar: {
         marginTop: 20,
-        width: 330,
         backgroundColor: '#87f2a2',
         borderRadius: 10,
         padding: 10,
+        width: '95%',
     },
     buttonSomar: {
         color: 'black',
